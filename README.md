@@ -1,7 +1,7 @@
 <p align="center">
  <img alt="logo" src="https://vue.youshengyun.com/files/img/qrCodeLogo.png">
 <p align="center">
- <a href='https://gitee.com/risesoft-y9/y9-label/stargazers'><img src='https://gitee.com/risesoft-y9/y9-label/badge/star.svg?theme=dark' alt='star'></img></a>
+ <a href='https://gitee.com/risesoft-y9/y9-datacenter/stargazers'><img src='https://gitee.com/risesoft-y9/y9-datacenter/badge/star.svg?theme=dark' alt='star'></img></a>
     <img src="https://img.shields.io/badge/version-v9.6.6-yellow.svg">
     <img src="https://img.shields.io/badge/Spring%20Boot-2.7-blue.svg">
     <img alt="logo" src="https://img.shields.io/badge/Vue-3.3-red.svg">
@@ -12,67 +12,7 @@
 
 ## 简介
 
-数据标注是一款专门对文本数据进行处理和标注的工具，通过简化快捷的文本标注流程和动态的算法反馈，支持用户快速标注关键词并能通过算法持续减少人工标注的成本和时间。数据标注的过程先由人工标注构筑基础，再由自动标注反哺人工标注，最后由人工标注进行纠偏，从而大幅度提高标注的精准度和高效性。数据标注是一个完全开源的项目，无商业版，但是需要依赖开源的数字底座进行人员岗位管控。数据标注的各类词库结果会定期在本平台中公开。
-
-## 源码目录
-
-```
-vue -- 前端工程
- ├── y9vue-tokenizer -- 数据标注前端工程
-webapp -- 系统模块
- ├── risenet-y9boot-webapp-tokenizer -- 数据标注后端工程
-```
-
-## 数据标注功能架构图
-<div><img src="https://vue.youshengyun.com/files/img/开源网站图片上传/数据标注功能架构图.png"><div/>
-
-## 数据标注应用架构图
-<div><img src="https://vue.youshengyun.com/files/img/开源网站图片上传/数据标注应用架构图.png"><div/>
-
-## 产品特点
-
-### 高效标注
-
-针对文章和文本，数据标注利用各种标识、快捷键、组合键、分类方法来提高标注的效率并减少标注错误率。
-
-### 全局算法校准
-
-在多组同时标注的情况下，数据标注会汇聚全部的标注结果，从而减少重复标注的工作量。通过全局校准的方法，标注人员可以看到全局当前对于文章的自动标注结果，从而只需要对结果纠偏即可。
-
-### 行业词库
-
-针对数据标注的结果，本项目会定期释放各类、各行业以txt形式存储的经过人工纠偏的标注结果，从而帮助AI和分词器更精准地识别中文词汇里面不断的新生词汇和组合词汇。
-
-## 功能描述
-
-| 序&nbsp;号       | 特&nbsp;点&nbsp;&nbsp;名&nbsp;称        | 特点描述                       |
-|--------|------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 1      | 添加文章                |通过本地导入或者批量导入的方式添加文章，同时可以根据文章类型进行必要的分类。|
-| 2      | 文章筛选                |根据文章类型和顺序编号进行筛选。|
-| 3      | 导出分词                |支持将全部已经完成的分词和标注进行一次性的导出。本功能以压txt的形式导出文件。|
-| 4      | 标注结果                |通过红色方框显示最终的人工标注结果。此结果为全局的人工标注的综合结果，而非单人单文章的标注结果。|
-| 5      | 标注操作                |支持以快捷键、右键、组合键等方式确认标注，同时支持在页面或者快捷键的方式删除已经标注的词汇。|
-| 6      | 标注状态                |包含“全部标注”、“标注中”、“未标注”、“已标注”共计四种状态，可以根据状态、序号、文章分类进行筛选。|
-| 7      | 标注验证                |利用分词器和已具备的全局综合分词能力进行一次标注验证，检查是否有遗漏的标注语料，也可以检验全局综合分词能力是否有偏颇。标注验证以下划线和波浪线的方式区别邻近的名词。|
-| 8      | 标注日志                |在单个文章中查看已经完成的标注操作日志。|
-
-
-## 数据资产
-
-### 1. 行业领域专有词汇
-<div><img src="https://vue.youshengyun.com/files/行业领域专有词汇.png"><div/>
-
-### 2. 政务公开文章词汇
-<div><img src="https://vue.youshengyun.com/files/政务公开文章词汇.png"><div/>
-
-### 3. 司法案件观点条例
-<div><img src="https://vue.youshengyun.com/files/司法案件观点条例.png"><div/>
-
-### 4. 数据库分类题目库
-<div><img src="https://vue.youshengyun.com/files/数据库分类题目库.png"><div/>
-
-### 5. 算法库（来自“山东国家应用数学中心”）
-<div><img src="https://vue.youshengyun.com/files/算法库.jpg"><div/>
+智能检索是一款基于Elasticsearch开发的检索软件，为满足大数据高效检索的需求而设计，界面简介友好，操作流畅。该软件深度整合了Elasticsearch的强大搜索功能，可应对多类型海量数据的治理及查询要求，并对查询文件进行相关文件推荐。为满足用户多样化检索需求，提供精准检索与智能检索两种不同的检索方式，且支持多种排序方式、多字段、多条件组合查询并高亮关键词，提供更为极致的检索效果。此外建立后台进行数据监控、数据白名单、检索关键词统计等功能，提高用户体验并高效管理数据。
 
 ## 后端技术选型
 
@@ -86,6 +26,7 @@ webapp -- 系统模块
 | 6  | javers          | 6.13.0  | <a href="https://github.com/javers/javers" target="_blank">官网</a>                                                  |
 | 7  | lombok          | 1.18.26 | <a href="https://projectlombok.org/" target="_blank">官网</a>                                                        |
 | 8  | logback         | 1.2.11  | <a href="https://www.docs4dev.com/docs/zh/logback/1.3.0-alpha4/reference/introduction.html" target="_blank">官网</a> |
+| 9  | Elaticsearch         | 7.6.2  | <a href="https://www.elastic.co/cn/" target="_blank">官网</a> |
 
 ## 前端技术选型
 
@@ -151,13 +92,7 @@ webapp -- 系统模块
 | 12 | <a href="https://vue.youshengyun.com/files/国际化.pdf" target="_blank">前端国际化</a>                                    |
 | 13 | <a href="https://vue.youshengyun.com/files/Icon图标.pdf" target="_blank">前端Icon图标</a>                              |
 | 14 | <a href="https://vue.youshengyun.com/files/单点登录对接文档.pdf" target="_blank">单点登录对接文档</a>                            |
-| 15 | <a href="https://vue.youshengyun.com/files/分词器安装部署文档.pdf" target="_blank">分词器安装部署文档</a>                                               |
-| 16 | <a href="https://vue.youshengyun.com/files/分词器操作手册.pdf" target="_blank">分词器操作手册</a>                                               |
 
-## 数据标注截图
-
-<div><img src="https://vue.youshengyun.com/files/img/shujubiaozhu.jpg"><div/>
-<div><img src="https://vue.youshengyun.com/files/img/biaozhuyanzheng.jpg"><div/>
 
 ## 依赖开源项目
 
@@ -175,14 +110,6 @@ webapp -- 系统模块
 
 官网：<a href="https://www.risesoft.net/" target="_blank">https://www.risesoft.net/</a>
 
-### 统一标识代码注册管理中心
-
-官网：<a href="https://www.idcode.org.cn/" target="_blank">https://www.idcode.org.cn/</a>
-
-
->
-数字底座已经全面接入统一标识码（MA码），具体使用说明请查看：<a href="https://gitee.com/risesoft-y9/y9-core/tree/main/y9-digitalbase-idcode" target="_blank">https://gitee.com/risesoft-y9/y9-core/tree/main/y9-digitalbase-idcode</a>
->
 
 ### 中国城市发展研究会
 
@@ -192,15 +119,7 @@ webapp -- 系统模块
 
 官网：<a href="https://www.yayueyun.com/yayueOwe" target="_blank">https://www.yayueyun.com/yayueOwe</a>
 
-### 北京京畿法律咨询有限公司
 
-联系人：邱先生
-
-邮箱：bjbj7@qq.com
-
-### 山东国家应用数学中心
-
-官网：<a href="http://www.sdam.sdu.edu.cn/" target="_blank">http://www.sdam.sdu.edu.cn/</a>
 
 ## 咨询与合作
 
