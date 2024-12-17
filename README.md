@@ -115,11 +115,6 @@
 
 官网：<a href="https://www.china-cfh.com/" target="_blank">https://www.china-cfh.com/</a>
 
-### 济南亚跃信息技术有限公司
-
-官网：<a href="https://www.yayueyun.com/yayueOwe" target="_blank">https://www.yayueyun.com/yayueOwe</a>
-
-
 
 ## 咨询与合作
 
