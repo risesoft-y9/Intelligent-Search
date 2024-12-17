@@ -1,0 +1,228 @@
+hibernate:
+    dialect:
+        mssql: org.hibernate.dialect.SQLServer2012Dialect
+        mysql: org.hibernate.dialect.MySQL8Dialect
+        oracle: org.hibernate.dialect.Oracle10gDialect
+management:
+    endpoints:
+        web:
+            exposure:
+                include: '*'
+server:
+    intranet:
+        ip: 192.168.1.x,10.161.x.x
+    port: 7055
+    servlet:
+        register-default-servlet: true
+        encoding:
+            charset: UTF-8
+            enabled: true
+            force: true
+        session:
+              tracking-modes: COOKIE
+    tomcat:
+        uri-encoding: UTF-8
+spring:
+    cloud:
+        bootstrap:
+            enabled: true
+        consul:
+            host: localhost
+            port: 8500
+            discovery:
+                health-check-path: ${server.servlet.context-path}/actuator/health
+    application:
+        name: datacenter
+    aop:
+        auto: false
+        proxy-target-class: false
+    autoconfigure:
+        exclude: 
+            - org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+            - org.springframework.boot.autoconfigure.quartz.QuartzAutoConfiguration
+            - org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration
+            - org.springframework.boot.autoconfigure.data.mongo.MongoDataAutoConfiguration
+            - org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration
+    data:
+        elasticsearch:
+            repositories:
+                enabled: true
+    datasource:
+        generate-unique-name: false
+        druid:
+            y9-public:
+                driver-class-name: org.h2.Driver 
+                url: jdbc:h2:mem:RISEDB
+                username: sa 
+                password: 
+                initialSize: 1
+                maxActive: 20
+                maxPoolPreparedStatementPerConnectionSize: 100
+                maxWait: 60000
+                minEvictableIdleTimeMillis: 300000
+                minIdle: 1
+                poolPreparedStatements: true
+                testOnBorrow: false
+                testOnReturn: false
+                testWhileIdle: true
+                timeBetweenEvictionRunsMillis: 60000
+                useGlobalDataSourceStat: true
+                validationQuery: SELECT 1 FROM DUAL
+    elasticsearch:
+        rest:
+            uris: 127.0.0.1:9200
+            #uris: 192.169.144.213:9200
+            #username: elastic
+            #password: 'risesoft@swj'
+    jmx:
+        default-domain: datacenter
+    jpa:
+        hibernate:
+            naming:
+                implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyHbmImpl
+                physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        open-in-view: false
+        properties:
+            hibernate:
+                cache:
+                    use_query_cache: false
+                    use_second_level_cache: false
+                dialect: org.hibernate.dialect.H2Dialect
+                hbm2ddl:
+                    auto: update
+                jdbc:
+                    batch_size: 100
+                show_sql: true
+    main:
+        allow-bean-definition-overriding: true
+    h2:
+        console:
+            enabled: true
+            path: /h2-data
+            settings:
+                web-allow-others: true
+    mvc:
+        view:
+            prefix: /WEB-INF/jsp/
+            suffix: .jsp
+    servlet:
+        multipart:
+            maxFileSize: 200MB
+            maxRequestSize: 1000MB
+    kafka:
+        bootstrap-servers: localhost:9092
+        consumer:
+            auto-commit-interval: 1000
+            enable-auto-commit: true
+            group-id: datacenter-server
+systemName: datacenter
+y9:
+    app:
+        log:
+            kafkaEnabled: false
+        platform:
+            checkPermission: false
+            enableIpAddressWhiteList: false
+            eventTarget: ALL,sync-all-persons,sync-all-departments
+            strictRoleBasedAcessControll: false
+    common:
+        idEnabled: 0
+        cxfEnabled: false
+        cacheEnabled: false
+        kafkaEnabled: false
+        guidLength: 32
+        tomcatPassWord: tomcat
+        tomcatUserName: tomcat
+        #tomcatURL: http://172.16.6.208:8081
+        tomcatURL: http://127.0.0.1:7057
+        isvBaseURL: http://127.0.0.1:7055/admin-isv
+        logBaseURL: http://127.0.0.1:7061/log
+        opsBaseURL: http://127.0.0.1:7055/admin-ops
+        orgBaseURL: http://127.0.0.1:7055/platform
+        portalBaseURL: http://127.0.0.1:7055/portal
+        homeBaseURL: http://127.0.0.1:7055/y9home
+        datacenterBaseURL: http://127.0.0.1:7055/datacenter
+        soaBaseURL: http://127.0.0.1:7055/soa
+        tenantBaseURL: http://127.0.0.1:7055/admin-tenant
+        todoBaseURL: http://127.0.0.1:7055/todo
+        todoTaskURLPrefix: http://127.0.0.1:7055
+        cmsBaseURL: http://127.0.0.1:7055/cms
+        fileManagerURL: http://localhost:7056/fileManager
+        userOnlineBaseURL: http://127.0.0.1:7055/userOnline
+        #oaTodoFileURL: http://192.168.225.20:7979/oa/service/TodoFile #oa获取公文接口内网 
+        oaTodoFileURL: http://120.52.191.240:7979/oa/service/TodoFile #oa获取公文接口外网
+        #SJXZXKDataURL: http://192.168.225.22:9009/bjwater/service/MoblileLicensing?wsdl #行政许可接口内网
+        SJXZXKDataURL: http://120.52.191.240:7979/bjwater/service/MoblileLicensing?wsdl #行政许可接口外网
+        #TSLMURL: http://192.168.225.20:7979/oa/ecuploader/mobileService.do #水务专栏接口内网 
+        TSLMURL: http://120.52.191.240:7979/oa/ecuploader/testMobileService.do #水务专栏接口外网 
+        #ocrURL: http://192.169.204.209:8010/uniscan-service #ocr内网接口
+        ocrURL: http://82.157.150.112:8005/uniscan-service #ocr外网接口
+        openOfficePath: C:\\Program Files (x86)\\OpenOffice 4 #本地环境
+        #openOfficePath: /opt/libreofficedev7.1 #linux环境
+        dicPath: /home/apache-tomcat-9.0.73/webapps/ROOT/hot_ext.dic
+    feature:
+        elasticsearch:
+            packagesToScanEntityPublic: net.risesoft.nosql.elastic.entity
+            packagesToScanRepositoryPublic: net.risesoft.nosql.elastic.repository
+        jpa:
+            packagesToScanEntityPublic: net.risesoft.y9public.entity
+            packagesToScanEntityTenant: net.risesoft.entity
+            packagesToScanRepositoryPublic: net.risesoft.y9public.repository
+            packagesToScanRepositoryTenant: net.risesoft.repository
+        mongo:
+             packagesToScanEntityPublic: net.risesoft.y9public.entity
+             packagesToScanRepositoryPublic: net.risesoft.y9public.repository
+             packagesToScanEntityTenant: net.risesoft.entity
+             packagesToScanRepositoryTenant: net.risesoft.repository
+        listener:
+            redis:
+                enabled: false
+        log:
+            enabled: false
+        publish:
+            kafka:
+                enabled: false
+            redis:
+                enabled: false
+        session:
+            mongo:
+                collection-name: y9sessions
+                enabled: false
+                maxInactiveIntervalInSeconds: 3600
+            redis:
+                enabled: true
+                maxInactiveIntervalInSeconds: 3600
+#        sso:
+#            casFilterUrlPatterns: /*
+#            casServerUrlPrefix: http://localhost:7055/sso
+#            casServerUrlPrefixForValidation: http://127.0.0.1:7055/sso
+#            enabled: false
+#            ignorePattern: /static,/services,/mobile,/engine,/ssoProxyCallback,/scheduled,/actuator
+#            ignoreUrlPatternType: net.risesoft.matcher.RiseContainMatcher
+#            logoutUrl: http://localhost:7055/sso/logout?service=http://localhost:7056
+#            saveLogMessage: false
+#            saveOnlineMessage: false
+#            serverName: http://localhost:7056
+#            singleSignOutFilterOrder: 1
+        file:
+            sha256FileContent: true
+        security:
+            enabled: true
+            cors:
+                allowCredentials: true
+                allowedOriginPatterns:
+                    - https://*
+                    - http://*
+    oauth2:
+        # 单点登录保护的路径
+        protectedUrlPatterns: /oldOAIncrement/*
+        # 统一身份体系颁发的客户端id
+        clientId: clientid-local
+        # 统一身份体系颁发的客户端密钥
+        clientSecret: secret-local
+        # 获取令牌或刷新令牌的地址（需要填写实际的统一身份认证ip和port）
+        accessTokenUri: http://172.26.70.34/sso/oauth2.0/accessToken
+        # 校验accessToken是否有效的地址（需要填写实际的统一身份认证ip和port）
+        introspectionUri: http://172.26.70.34/sso/oauth2.0/introspect
+        # 根据accessToken获取用户信息的地址（需要填写实际的统一身份认证ip和port）
+        profileUri: http://172.26.70.34/sso/oauth2.0/profile

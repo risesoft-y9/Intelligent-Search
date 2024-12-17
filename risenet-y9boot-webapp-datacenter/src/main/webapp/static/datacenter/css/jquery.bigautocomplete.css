@@ -1,0 +1,21 @@
+@charset "utf-8";
+.bigautocomplete-layout{
+	display:none;
+	background-color: #ffffff;
+	border:1px solid #BCBCBC;
+	position:absolute;
+	z-index:1000;
+	overflow-x:hidden;
+	overflow-y:auto; }
+.bigautocomplete-layout table{
+	border-collapse:collapse;border-spacing:0;background:none repeat scroll 0 0 #FFFFFF;width:100%;cursor:default;}
+.bigautocomplete-layout table tr{
+	background:none repeat scroll 0 0 #FFFFFF;}
+.bigautocomplete-layout .ct{
+	background:none repeat scroll 0 0 #D2DEE8 !important;}
+.bigautocomplete-layout div{
+	word-wrap:break-word;
+	word-break:break-all;
+	padding:5px 5px 5px 10px;
+	font-size:14px;
+}
