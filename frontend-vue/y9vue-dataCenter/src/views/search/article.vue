@@ -103,7 +103,7 @@
 
     // 智能推荐接口
     async function getHotFileListInit() {
-        await hotSearchDataList(getId(), searchContent.value, appNameValue.value)
+        await hotSearchDataList(getId(), searchTitle.value, appNameValue.value)
             .then(async (res) => {
                 if (res.code == 0) {
                     intelligentList.value = await replaceGoodWords(res.data.data);

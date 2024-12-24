@@ -34,7 +34,7 @@
         const y9UserInfo = y9_storage.getObjectItem('ssoUserInfo');
         userInfo.value = {
             userName: y9UserInfo.name,
-            avator: y9UserInfo.avator,
+            avator: y9UserInfo.avator || 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png',
         };
     }
 </script>
