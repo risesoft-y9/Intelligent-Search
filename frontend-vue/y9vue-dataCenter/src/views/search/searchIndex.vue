@@ -90,12 +90,14 @@
         pageSizeOpts: [5, 10, 20, 30], //每页显示个数选择器的选项设置
     });
 
+    const isDataEmpty = ref(false);
+
     // 搜索条件的监听
     watch(
         () => searchStore.getSearchFilterInfo,
         (newVal) => {
             // 如果有类型数据就不用请求 没有就请求
-            if (newVal.dataType.length == 0) {
+            if (newVal.dataType.length == 0 && !isDataEmpty) {
                 getInitTypes();
                 return;
             }
@@ -115,6 +117,8 @@
     async function getInitTypes() {
         let result = await getSearchArticleType();
         let nameList = await replaceGoodWords(result.data);
+        if (!nameList.length) isDataEmpty.value = true;
+        if (nameList.length) isDataEmpty.value = false;
         // 根据nonAllSelectedList来判断传递的类型数据
         let dataTypeList: Array<String> = [];
         dataTypeList = nameList?.map((item) => item.dataName);

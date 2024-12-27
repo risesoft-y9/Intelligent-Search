@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-04-15 10:16:53
- * @LastEditTime: 2024-12-17 10:57:11
+ * @LastEditTime: 2024-12-26 16:14:10
  * @LastEditors: chensiwen cikl777@163.com
  * @Description: In User Settings Edit
  * @FilePath: \workspace-y9boot-9.5-vuee:\workspace-y9boot-9.6-vue\y9vue-kernel-dcat-style\src\api\lib\request.js
@@ -18,7 +18,7 @@ function y9Request(baseUrl = '') {
 
     const service = axios.create({
         baseURL: import.meta.env.VUE_APP_CONTEXT,
-        withCredentials: false,
+        withCredentials: true,
         timeout: 0,
     });
     let cancel = null;
@@ -30,11 +30,13 @@ function y9Request(baseUrl = '') {
             if (access_token) {
                 console.log('设置登陆成功的请求头');
                 config.headers['Authorization'] = 'Bearer ' + access_token;
-            }else {
-                config.cancelToken = new axios.CancelToken(function(c) { 
-                    cancel = c; 
-                });
+                config.headers['Access-Control-Allow-Origin'] = '*';
             }
+            // else {
+            //     config.cancelToken = new axios.CancelToken(function(c) { 
+            //         cancel = c; 
+            //     });
+            // }
             // console.log("请求之前设置loading....", config);
             // 在发送请求之前做些什么
             return config;
