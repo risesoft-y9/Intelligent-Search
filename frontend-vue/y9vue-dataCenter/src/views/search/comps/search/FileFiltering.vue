@@ -75,12 +75,12 @@
                                     <el-radio label="一月内" style="margin-right: 0px">一月内</el-radio>
                                     <el-radio label="time" style="margin-top: 8px">
                                         <div class="date-select" style="margin-top: 8px">
-                                            <div class="select-item" style="width: 100px">
+                                            <div class="select-item" style="width: 112px">
                                                 <el-date-picker
                                                     v-model="beginDate"
-                                                    type="month"
+                                                    type="date"
                                                     placeholder="开始日期"
-                                                    value-format="YYYY-MM"
+                                                    value-format="YYYY-MM-DD"
                                                     @change="handlerTimeChange"
                                                 />
                                             </div>
@@ -88,9 +88,9 @@
                                                 <span style="margin-left: 10px">至</span>
                                                 <el-date-picker
                                                     v-model="endDate"
-                                                    type="month"
+                                                    type="date"
                                                     placeholder="结束日期"
-                                                    value-format="YYYY-MM"
+                                                    value-format="YYYY-MM-DD"
                                                     @change="handlerTimeChange"
                                                 />
                                             </div>
@@ -254,30 +254,37 @@
         var date = new Date();
         var year = date.getFullYear();
         var month = date.getMonth() + 1;
+        var day = date.getDate();
         var month2 = '';
+        var day2 = '';
         if (month >= 1 && month <= 9) {
             month2 = '0' + month;
         } else {
             month2 = '' + month;
         }
-        var d2 = year + '-' + month2;
+        if (day >= 1 && day <= 9) {
+            day2 = '0' + day;
+        } else {
+            day2 = '' + day;
+        }
+        var d2 = year + '-' + month2 + '-' + day2;
         switch (type) {
             case '时间不限':
                 filterInfo.value.timeType = '';
                 timeShowText.value = '时间不限';
                 break;
             case '一年内':
-                var d1 = getDay(-365);
+                var d1 = getDay(-365) + '-01';
                 filterInfo.value.timeType = d1 + ' - ' + d2;
                 timeShowText.value = '一年内';
                 break;
             case '一月内':
-                var d1 = getDay(-30);
+                var d1 = getDay(-30) + '-01';
                 filterInfo.value.timeType = d1 + ' - ' + d2;
                 timeShowText.value = '一月内';
                 break;
             case '一周内':
-                var d1 = getDay(-7);
+                var d1 = getDay(-7) + '-01';
                 filterInfo.value.timeType = d1 + ' - ' + d2;
                 timeShowText.value = '一周内';
                 break;
@@ -499,7 +506,7 @@
     }
 
     .date-select {
-        padding: 0 16px;
+        padding: 0 8px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -509,7 +516,7 @@
             align-items: center;
             font-size: 14px;
             margin-bottom: 10px;
-            width: 130px;
+            width: 145px;
             > span {
                 margin-right: 10px;
                 width: 20px;
@@ -519,6 +526,10 @@
                 border-radius: 4px !important;
                 .el-input__prefix {
                     display: none;
+                }
+                .el-input__suffix-inner {
+                    width: 10px;
+                    height: 28px;
                 }
             }
         }

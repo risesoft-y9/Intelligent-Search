@@ -104,13 +104,13 @@
                     }
                 });
             }
-            if (props.listItem?.content?.length > Math.ceil(Math.ceil(widthValue / 14) * 1.7 + 33 * fontInfo?.length)) {
+            // 计算span的长度
+            let num = fontInfo?.length ? 33 * fontInfo?.length : 0;
+            // 判断content的长度 超过1行多就截断 否则全部展示
+            if (props.listItem?.content?.length > Math.ceil(Math.ceil(widthValue / 14) * 1.7 + num)) {
                 // 截取数据
                 newContentFlag.value = true;
-                newContent.value = props.listItem.content?.slice(
-                    0,
-                    Math.ceil(Math.ceil(widthValue / 14) * 1.7 + 33 * fontInfo?.length)
-                );
+                newContent.value = props.listItem.content?.slice(0, Math.ceil(Math.ceil(widthValue / 14) * 1.7 + num));
             } else {
                 newContent.value = props.listItem.content;
                 if (props.listItem?.content?.length) {
