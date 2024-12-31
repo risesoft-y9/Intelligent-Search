@@ -40,8 +40,8 @@
             </div>
             <el-row>
                 <template v-if="fileInfoObj?.content != null && fileInfoObj?.content != ''">
-                    <el-col :span="22" style="display: flex">
-                        <span v-if="fileInfoObj?.content.length > 200" class="document-content">
+                    <el-col :span="22" style="display: flex; margin-left: 26px">
+                        <span v-if="fileInfoObj?.content.length > 200" class="document-content" id="file-info">
                             <span v-if="!showAbstract">
                                 <span>{{ fileInfoObj?.content.substr(0, shrinkLength) }}...</span>
                                 <span class="click-on-span" @click="handlerClickOn">[展开]</span>
@@ -169,10 +169,6 @@
         const res = await openFile(params);
         if (res.code == 0) {
             fileInfoObj.value = await replaceGoodWords(res.data);
-
-            //手动模拟正文数据
-            //fileInfoObj.value.documentContent = '新华社北京1月12日电 1月9日，国务院总理李克强到市场监管总局考察，并主持召开座谈会。他强调，要以习近平新时代中国特色社会主义思想为指导，贯彻党的二十大和中央经济工作会议精神，落实党中央、国务院部署，深入抓好帮扶市场主体纾困政策落地，大力推进改革创新， 厚植滋养市场主体的土壤，着力稳增长稳就业稳物价，推动经济稳步回升、运行保持在合理区间在知识产权局，李克强听取了知识产权创造、保护、运用情况汇报。他说，市场竞争很重要的是拼创新，保护知识产权就是保护创新、保护第一生产力， 要坚持创新驱动发展。得知发明专利平均审查时间比五年前压减1/3，李克强说，创造不易，要用更优质高效服务让创新成果加速转化运用，促进产业升级，造福人民群众。'
-            //showAbstract.value = fileInfoObj.value.documentContent.length > shrinkLength ? false : true;
         }
 
         emits('getTitle', fileInfoObj.value, route.query.keyword);
@@ -405,6 +401,11 @@
                 .click-on-span {
                     color: var(--el-color-primary);
                     cursor: pointer;
+                }
+                #file-info {
+                    white-space: normal;
+                    width: 100%;
+                    text-align: left;
                 }
             }
         }

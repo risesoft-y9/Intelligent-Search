@@ -17,14 +17,14 @@
                 <div class="content-right">
                     <span class="card-title">智能推荐</span>
                     <div v-loading="intelligentLoading" class="content-box">
-                        <div v-if="intelligentList.length > 0">
+                        <div v-if="intelligentList?.length > 0">
                             <div v-for="(item, index) in intelligentList" :key="index" class="title-item">
                                 <div v-if="getId() != item.id">
                                     <span @click="handlerClickItem(encodeURI(item.id), encodeURI(item.dataType))">
                                         <i class="ri-stop-mini-fill"></i>{{ item.title }}
                                     </span>
                                 </div>
-                                <div v-if="getId() == item.id && intelligentList.length == 1">
+                                <div v-if="getId() == item.id && intelligentList?.length == 1">
                                     <img src="@/assets/images/IntelligentRelation.png" alt="智能关联缺省" />
                                 </div>
                             </div>
