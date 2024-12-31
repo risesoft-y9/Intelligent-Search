@@ -135,8 +135,8 @@
     let typeTableConfig = ref({
         columns: [
             { title: 'ID', key: 'id' },
-            { title: computed(() => t('文件标题')), key: 'biaoti' },
-            { title: computed(() => t('数据时间')), key: 'createTime' },
+            { title: computed(() => t('文件标题')), key: 'title' },
+            { title: computed(() => t('数据时间')), key: 'dataTime' },
             {
                 title: computed(() => t('是否公开')),
                 showOverflowTooltip: false,
