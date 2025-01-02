@@ -230,7 +230,7 @@
                     typeTableConfig.value.pageConfig.total = result.data.total;
                     // 自己定义的open列表赋值
                     isOpenData.value = result.data.dataList.map((item) => {
-                        return item.isOpen == 'open' ? true : false;
+                        return item.isOpen;
                     });
                 }
             })

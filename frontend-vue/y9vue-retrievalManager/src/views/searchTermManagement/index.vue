@@ -242,16 +242,16 @@
                 },
             ],
             tableData: [
-                {
-                    word: '供水',
-                    status: 1,
-                    id: 1,
-                },
-                {
-                    word: '水文',
-                    status: 0,
-                    id: 2,
-                },
+                // {
+                //     word: '供水',
+                //     status: 1,
+                //     id: 1,
+                // },
+                // {
+                //     word: '水文',
+                //     status: 0,
+                //     id: 2,
+                // },
             ],
             pageConfig: {
                 currentPage: 1, //当前页数，支持 v-model 双向绑定
@@ -335,7 +335,7 @@
         // 请求接口
         let result = await relatedWordList(params);
         if (result.code == 0) {
-            tableConfig.value.tableData = result.data.dataList;
+            tableConfig.value.tableData = result.data.dataList || [];
             tableConfig.value.pageConfig.total = result.data.total;
         }
         tableConfig.value.loading = false;
