@@ -310,10 +310,10 @@
 <style scoped lang="scss">
     @import '@/theme/global.scss';
     .content-center {
-        height: calc(100vh - 74px - 60px);
+        height: calc(100vh - 60px - 60px);
         background-color: #fff;
         padding: 0 30px;
-        margin: 0 30px;
+        margin-right: 30px;
         box-shadow: $boxShadow;
         overflow: auto;
         border-radius: 5px;
@@ -321,8 +321,9 @@
             .title-info {
                 display: flex;
                 align-items: center;
+                padding-bottom: 4px;
                 i {
-                    font-size: 28px;
+                    font-size: 22px;
                 }
                 span {
                     font-size: 18px;
@@ -341,7 +342,7 @@
             }
         }
         .content-center-title {
-            padding-top: 20px;
+            padding-top: 30px;
             display: flex;
             flex-direction: column;
             align-items: center;

@@ -147,7 +147,7 @@
             }
             .content-right {
                 background-color: #fff;
-                height: calc(100vh - 74px - 60px);
+                height: calc(100vh - 60px - 60px);
                 // overflow: auto;
                 box-shadow: $boxShadow;
                 padding: 30px;

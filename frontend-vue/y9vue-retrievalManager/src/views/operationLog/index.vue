@@ -291,7 +291,7 @@
 
     //窗口变动时触发，获取表格的高度
     function windowHeightChange(tableHeight) {
-        operationLogsTable.value.maxHeight = tableHeight - 35 - 35; //35 35 是y9-card-content样式中上padding、下padding的值
+        operationLogsTable.value.maxHeight = tableHeight - 35 - 35 - 2; //35 35 是y9-card-content样式中上padding、下padding的值
     }
 
     // 表格 配置

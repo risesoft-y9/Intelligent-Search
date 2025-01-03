@@ -4,7 +4,7 @@
 
 <template>
     <div class="search-index-top">
-        <el-row style="width: 100%; position: initial">
+        <el-row style="width: calc(100% - 60px); margin: 0 30px; position: initial">
             <el-col :span="2"></el-col>
             <el-col :span="20">
                 <div class="search-left">

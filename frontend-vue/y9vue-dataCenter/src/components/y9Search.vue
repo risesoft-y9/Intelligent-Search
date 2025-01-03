@@ -257,12 +257,12 @@
                 }
                 .ri-search-2-line,
                 .ri-close-line {
-                    font-size: 30px;
+                    font-size: 24px;
                     margin-right: 10px;
                     cursor: pointer;
                 }
                 .ri-close-line {
-                    font-size: 36px;
+                    font-size: 30px;
                 }
                 .el-input__wrapper.is-focus {
                     box-shadow: 0 0 0 1px var(--el-input-bg-color) inset;

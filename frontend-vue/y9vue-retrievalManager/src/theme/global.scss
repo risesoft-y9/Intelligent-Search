@@ -198,6 +198,10 @@ $hoverBgColor: rgb(231, 236, 237);
 	border: solid 1px var(--el-color-primary) !important;
 }
 
+.global-btn-third:hover {
+	background-color: var(--el-color-primary-light-8) !important;
+}
+
 :deep(.el-message) {
 
 	z-index: 10000 !important;

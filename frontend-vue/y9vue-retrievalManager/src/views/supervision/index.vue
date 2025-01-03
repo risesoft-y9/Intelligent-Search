@@ -18,8 +18,10 @@
                 >
                     <i class="ri-search-2-line"></i>{{ $t('查询') }}</el-button
                 >
+            </template>
+            <template #operateBtn>
                 <el-button
-                    class="global-btn-second"
+                    class="global-btn-third"
                     @click="handlerClickReset"
                     :size="fontSizeObj.buttonSize"
                     :style="{ fontSize: fontSizeObj.baseFontSize }"
@@ -86,9 +88,10 @@
         pageConfig: {
             // 分页配置，false隐藏分页
             currentPage: 1, //当前页数，支持 v-model 双向绑定
-            pageSize: 10, //每页显示条目个数，支持 v-model 双向绑定
+            pageSize: 20, //每页显示条目个数，支持 v-model 双向绑定
             layout: 'sizes, prev, pager, next, jumper', //布局
             total: 0, //总条目数
+            pageSizeOpts: [20, 30, 40],
         },
     });
 
@@ -123,12 +126,18 @@
                 props: {
                     options: [] as Array<optionsList>,
                 },
-                span: settingStore.device === 'mobile' ? 12 : 3,
+                span: settingStore.device === 'mobile' ? 12 : 4,
             },
             {
                 type: 'slot',
                 slotName: 'slotBtns',
                 span: settingStore.device === 'mobile' ? 12 : 5,
+            },
+            {
+                type: 'slot',
+                justify: 'flex-end',
+                slotName: 'operateBtn',
+                span: settingStore.device === 'mobile' ? 12 : 7,
             },
         ],
     });

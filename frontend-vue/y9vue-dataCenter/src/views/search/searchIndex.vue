@@ -225,6 +225,7 @@
             // overflow: auto;
             .content-data {
                 height: 100%;
+                margin: 0 30px;
             }
             .content-row {
                 display: flex;
@@ -234,7 +235,7 @@
                     width: 400px;
                     height: calc(100% - 35px - 15px);
                     margin-right: 15px;
-                    margin-top: 35px;
+                    margin-top: 30px;
                 }
                 .content-right {
                     width: calc(100% - 400px - 15px);
@@ -257,7 +258,7 @@
             .search-data {
                 color: #999;
                 font-size: 14px;
-                height: 35px;
+                height: 30px;
                 // display: flex;
                 // align-items: center;
                 .search-num {

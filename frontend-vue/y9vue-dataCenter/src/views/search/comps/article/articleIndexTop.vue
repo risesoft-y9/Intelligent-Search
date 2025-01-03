@@ -42,10 +42,10 @@
     @import '@/theme/global.scss';
     .article-top {
         display: flex;
-        padding: 5px 3% 10px 2%;
+        padding: 10px 3% 10px 2%;
         justify-content: space-between;
         align-items: center;
-        height: 74px;
+        height: 40px;
         background-color: #fff;
         box-shadow: $boxShadow;
         .top-left {

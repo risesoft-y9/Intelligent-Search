@@ -148,10 +148,11 @@
         pageConfig: {
             // 分页配置，false隐藏分页
             currentPage: 1, //当前页数，支持 v-model 双向绑定
-            pageSize: 10, //每页显示条目个数，支持 v-model 双向绑定
+            pageSize: 15, //每页显示条目个数，支持 v-model 双向绑定
             layout: 'sizes, prev, pager, next, jumper', //布局
             total: 0, //总条目数
             pagerCount: 4,
+            pageSizeOpts: [15, 20, 30, 40],
         },
     });
 
@@ -301,6 +302,9 @@
             }
             .el-pagination__sizes {
                 margin-right: 16px;
+            }
+            .el-select {
+                width: 128px;
             }
         }
     }

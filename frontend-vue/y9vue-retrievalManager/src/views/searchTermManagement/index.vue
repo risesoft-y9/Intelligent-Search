@@ -21,7 +21,7 @@
                     <span>{{ $t('查询') }}</span>
                 </el-button>
                 <el-button
-                    class="global-btn-second"
+                    class="global-btn-third"
                     :size="fontSizeObj.buttonSize"
                     :style="{ fontSize: fontSizeObj.baseFontSize }"
                     @click="resetSearchFilter"
@@ -32,7 +32,7 @@
             </template>
             <template #operateBtn>
                 <el-button
-                    class="global-btn-second"
+                    class="global-btn-third"
                     :size="fontSizeObj.buttonSize"
                     :style="{ fontSize: fontSizeObj.baseFontSize }"
                     @click="deletesearchWords(false)"
@@ -42,7 +42,7 @@
                     <span>{{ $t('删除') }}</span>
                 </el-button>
                 <el-button
-                    class="global-btn-second"
+                    class="global-btn-third"
                     :size="fontSizeObj.buttonSize"
                     :style="{ fontSize: fontSizeObj.baseFontSize }"
                     @click="enableOrDisabled(false)"
@@ -52,7 +52,7 @@
                     <span>{{ $t('启用/禁用') }}</span>
                 </el-button>
                 <el-button
-                    class="global-btn-second"
+                    class="global-btn-third"
                     :size="fontSizeObj.buttonSize"
                     :style="{ fontSize: fontSizeObj.baseFontSize }"
                     @click="handleExport"
