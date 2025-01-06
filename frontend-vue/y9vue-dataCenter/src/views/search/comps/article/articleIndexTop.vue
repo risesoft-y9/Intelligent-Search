@@ -1,4 +1,12 @@
 <!--
+ * @Author: chensiwen cikl777@163.com
+ * @Date: 2024-12-17 17:07:03
+ * @LastEditors: chensiwen cikl777@163.com
+ * @LastEditTime: 2025-01-06 11:54:25
+ * @FilePath: \y9vue-dataCenter\src\views\search\comps\article\articleIndexTop.vue
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
+<!--
  *  具体文本页 头部
 -->
 
@@ -8,7 +16,7 @@
             <img src="@/assets/images/logo.png" />
         </div>
         <div class="top-right">
-            <el-avatar :size="35" :src="userInfo.avator" />
+            <el-avatar :size="33" :src="userInfo.avator" />
             <span>{{ userInfo.userName }}</span>
         </div>
     </div>
@@ -52,7 +60,7 @@
             display: flex;
             align-items: center;
             img {
-                width: 180px;
+                width: 150px;
                 height: 34px;
                 margin-right: 10px;
             }

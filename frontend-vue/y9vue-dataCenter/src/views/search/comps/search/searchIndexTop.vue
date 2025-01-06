@@ -70,8 +70,8 @@
                 width: 400px;
                 justify-content: center;
                 img {
-                    width: 283px;
-                    height: 51px;
+                    width: 230px;
+                    height: 52px;
                 }
                 .water-text {
                     display: flex;

@@ -102,8 +102,8 @@
             margin-bottom: 30px;
             min-width: 600px;
             img {
-                width: 275px;
-                height: 53px;
+                width: 208px;
+                height: 47px;
             }
             .water-text {
                 display: flex;
