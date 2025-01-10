@@ -72,6 +72,16 @@
 | 5      | 操作系统 | 统信、麒麟、中科方德等        |
 | 6      | 芯片   | ARM体系、MIPS体系、X86体系 |
 
+## 在线体验
+
+### 智能检索
+
+**演示地址**前台：<https://test.youshengyun.com/y9vue-dataCenter/>
+**演示地址**后台：<https://test.youshengyun.com/y9vue-retrievalManager/>
+
+> 演示账号：user 密码：Risesoft@2024
+>
+
 ## 文档专区
 
 开发文档：https://docs.youshengyun.com/
