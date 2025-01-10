@@ -77,7 +77,9 @@
 ### 智能检索
 
 **演示地址**
+
 前台：<https://test.youshengyun.com/y9vue-dataCenter/>
+
 后台：<https://test.youshengyun.com/y9vue-retrievalManager/>
 
 > 演示账号：user 密码：Risesoft@2024
