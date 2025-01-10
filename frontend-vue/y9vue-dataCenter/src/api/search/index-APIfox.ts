@@ -3,7 +3,7 @@ import qs from 'qs';
 const searchRequest = Request();
 
 /**
- * 全文检索的可选择文章类型的数据
+ * 智能检索的可选择文章类型的数据
  * @returns
  */
 export const getSearchArticleType = async () => {
@@ -15,7 +15,7 @@ export const getSearchArticleType = async () => {
 };
 
 /**
- * 全文检索的搜索列表
+ * 智能检索的搜索列表
  * @param {*} params
  * @returns
  */

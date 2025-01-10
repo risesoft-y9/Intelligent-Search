@@ -2,7 +2,7 @@
   "name": "y9vue-retrievalManager",
   "version": "1.0.0",
   "author": "chensiwen",
-  "description": "全文检索管理平台",
+  "description": "智能检索管理平台",
   "scripts": {
     "serve": "vite  --mode development",
     "build": "vite build",
