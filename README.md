@@ -14,6 +14,24 @@
 
 智能检索是一款基于Elasticsearch的检索系统，为满足大数据高效检索的需求而设计，界面简介友好，操作流畅。智能检索支持多种数据格式的展现，提供多维度的检索筛选，匹配精准检索与智能检索两种不同的检索方式。智能检索对于可被检索的文章、字段有严格的后台管理模式，同时可拓展行业领域分词和AI+RAG+KAG+CAG等多种增强模式，智能检索需要依赖开源的数字底座进行相关人员权限的管控。
 
+## 功能架构图
+
+<div><img src="https://vue.youshengyun.com/files/intelligentSearch/智能检索-功能架构图.png"><div/>
+
+## 产品特点
+
+### 简洁易用检索前端
+
+提供完整的简洁的涉及三层的检索界面，易于快速进行定制化和二次开发。
+
+### 完备数据权限管理
+
+针对所有可查数据、数据流入项、用户检索词、用户检索日志均可以进行记录、查看和管理，有效管控敏感文件权限。
+
+### 智能文章推荐与热度排名
+
+利用专业领域分词和推荐算法为用户输出可能喜欢或者有用的文章。可依据文章的搜索热度进行文章统计排名。
+
 ## 后端技术选型
 
 | 序号 | 依赖              | 版本      | 官网                                                                                                                 |
@@ -110,6 +128,21 @@
 | 13 | <a href="https://vue.youshengyun.com/files/Icon图标.pdf" target="_blank">前端Icon图标</a>                              |
 | 14 | <a href="https://vue.youshengyun.com/files/单点登录对接文档.pdf" target="_blank">单点登录对接文档</a>                            |
 
+## 系统截图
+<table>
+    <tr>
+        <td><img src="https://vue.youshengyun.com/files/intelligentSearch/智能检索-截图1.png"></td>
+        <td><img src="https://vue.youshengyun.com/files/intelligentSearch/智能检索-截图2.png"></td>
+    </tr>
+    <tr>
+        <td><img src="https://vue.youshengyun.com/files/intelligentSearch/智能检索-截图3.png"></td>
+        <td><img src="https://vue.youshengyun.com/files/intelligentSearch/智能检索-截图4.png"></td>
+    </tr>
+    <tr>
+        <td><img src="https://vue.youshengyun.com/files/intelligentSearch/智能检索-截图5.png"></td>
+        <td><img src="https://vue.youshengyun.com/files/intelligentSearch/智能检索-截图6.png"></td>
+    </tr>
+</table>
 
 ## 依赖开源项目
 
