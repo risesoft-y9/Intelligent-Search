@@ -14,6 +14,16 @@
 
 智能检索是一款基于Elasticsearch的检索系统，为满足大数据高效检索的需求而设计，界面简介友好，操作流畅。智能检索支持多种数据格式的展现，提供多维度的检索筛选，匹配精准检索与智能检索两种不同的检索方式。智能检索对于可被检索的文章、字段有严格的后台管理模式，同时可拓展行业领域分词和AI+RAG+KAG+CAG等多种增强模式，智能检索需要依赖开源的数字底座进行相关人员权限的管控。
 
+## 源码目录
+
+```
+frontend-vue -- 前端工程
+ ├── y9vue-dataCenter -- 智能检索前台前端工程
+ ├── y9vue-retrievalManager -- 智能检索后台前端工程
+risenet-y9boot-webapp-datacenter -- 智能检索后端工程
+```
+
+
 ## 功能架构图
 
 <div><img src="https://vue.youshengyun.com/files/intelligentSearch/智能检索-功能架构图.png"><div/>
