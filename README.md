@@ -81,6 +81,7 @@ risenet-y9boot-webapp-datacenter -- 智能检索后端工程
 |----|------------------|------|---------------------------------------------------------------------------|
 | 1  | JDK              | 11   | <a href="https://openjdk.org/" target="_blank">官网</a>                     |
 | 2  | Tomcat           | 9.0+ | <a href="https://tomcat.apache.org/" target="_blank">官网</a>               |
+| 3  | OpenOffice       | 4.1  | <a href="https://www.openoffice.org/zh-cn/" target="_blank">官网</a>        |
 
 ## 数据库选型
 
