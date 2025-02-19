@@ -171,7 +171,7 @@
         sliceNumber.value = 7;
         searchStore.$patch({
             searchFilterInfo: {
-                dataType: typeTextList.value,
+                dataType: checkedTypes.value,
             },
         });
     }
