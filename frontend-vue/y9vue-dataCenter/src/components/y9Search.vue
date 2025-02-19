@@ -42,10 +42,6 @@
     import { useSearchStore } from '@/store/modules/searchStore';
     import { searchHistoryList } from '@/api/search/index';
     import { replaceGoodWords } from '@/utils/index';
-    import { urlHandleMethod } from '@/utils/routes';
-    import { useRouter } from 'vue-router';
-    // 实例化路由
-    const router = useRouter();
     const searchStore = useSearchStore();
 
     // active值，默认第一个
@@ -68,6 +64,8 @@
             default: false,
         },
     });
+
+    const emit = defineEmits(['search-content']);
 
     if (searchStore.searchFilterInfo.searchContent && props.deleteBtn) {
         showDeleteBtn.value = true;
@@ -138,19 +136,11 @@
     };
 
     // 点击搜索按钮
-    function handlerClick() {
-        urlHandleMethod(searchValue.value, router);
-
+    async function handlerClick() {
         searchStore.$patch({
             showHome: false,
         });
-
-        searchStore.$patch({
-            searchFilterInfo: {
-                searchContent: searchValue.value || null,
-            },
-        });
-
+        await emit('search-content', searchValue.value);
         associationalWord.value = false;
     }
 

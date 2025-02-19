@@ -321,9 +321,9 @@
             .title-info {
                 display: flex;
                 align-items: center;
-                padding-bottom: 4px;
+                padding-bottom: 9px;
                 i {
-                    font-size: 22px;
+                    font-size: 18px;
                 }
                 span {
                     font-size: 18px;

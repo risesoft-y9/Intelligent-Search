@@ -169,6 +169,11 @@
         checkedTypes.value = typeTextList.value;
         lastCheckedTypes.value = typeTextList.value;
         sliceNumber.value = 7;
+        searchStore.$patch({
+            searchFilterInfo: {
+                dataType: typeTextList.value,
+            },
+        });
     }
 
     // 点击收回
@@ -191,7 +196,7 @@
         checkedTypes.value = val ? newTypeName : [];
         isIndeterminate.value = false;
         buttonStatus.value = val ? false : true;
-        handlerResetValue();
+        // handlerResetValue();
 
         lastCheckedTypes.value = checkedTypes.value;
         // typeShow.value = val? true : false;
@@ -215,7 +220,7 @@
         // });
 
         // checkedTypes.value = nameList;
-        handlerResetValue();
+        // handlerResetValue();
 
         lastCheckedTypes.value = checkedTypes.value;
     }
@@ -316,7 +321,7 @@
     }
 
     // 搜索
-    async function handlerSearch() {
+    async function handlerSearch(value?) {
         if (timeShowText.value == 'time' && !beginDate.value) {
             ElMessage({
                 message: '请输入开始时间',
@@ -360,7 +365,7 @@
                     dataType: checkedTypes.value,
                     timeType: filterInfo.value.timeType,
                     // fields,
-                    searchContent: searchValue.value || null,
+                    searchContent: value ? value : searchValue.value || null,
                 }),
             });
             emits('updateFlag', false);
@@ -405,6 +410,10 @@
             timeType: '时间不限',
         };
     }
+
+    defineExpose({
+        handlerSearch,
+    });
 </script>
 
 <style lang="scss" scoped>

@@ -1,7 +1,7 @@
 <template>
     <div class="search-index">
         <!-- 头部 -->
-        <searchIndexTop />
+        <searchIndexTop @search-content="handleSearch" />
         <!-- 内容区域 -->
         <div class="search-content">
             <div class="content-data">
@@ -11,7 +11,7 @@
                         <div class="content-row">
                             <div class="content-filter">
                                 <!-- 筛选条件 -->
-                                <FileFiltering />
+                                <FileFiltering ref="filterRef" />
                             </div>
                             <div class="content-right">
                                 <div class="search-data" id="top-data">
@@ -90,13 +90,19 @@
         pageSizeOpts: [5, 10, 20, 30], //每页显示个数选择器的选项设置
     });
 
+    const filterRef = ref('');
+
+    // 点击搜索 拿到所有最新条件
+    async function handleSearch(value) {
+        await filterRef.value?.handlerSearch(value);
+    }
+
     // 搜索条件的监听
     watch(
         () => searchStore.getSearchFilterInfo,
         (newVal) => {
             // 如果有类型数据就不用请求 没有就请求
             if (newVal.dataType.length == 0) {
-                getInitTypes();
                 return;
             }
             // newVal 过滤对象
@@ -110,20 +116,6 @@
             deep: true,
         }
     );
-
-    // 请求 可选择类型的接口
-    async function getInitTypes() {
-        let result = await getSearchArticleType();
-        let nameList = await replaceGoodWords(result.data);
-        // 根据nonAllSelectedList来判断传递的类型数据
-        let dataTypeList: Array<String> = [];
-        dataTypeList = nameList?.map((item) => item.dataName);
-        searchStore.$patch({
-            searchFilterInfo: {
-                dataType: dataTypeList,
-            },
-        });
-    }
 
     // 搜索列表 init
     async function initSearchList(newVal?, params?) {

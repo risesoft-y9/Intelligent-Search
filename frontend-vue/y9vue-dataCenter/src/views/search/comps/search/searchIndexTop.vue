@@ -14,7 +14,15 @@
                     </div>
                     <div class="search-left-content">
                         <!-- 搜索组件 -->
-                        <y9Search :list="assortList" :deleteBtn="true" />
+                        <y9Search
+                            :list="assortList"
+                            :deleteBtn="true"
+                            @search-content="
+                                async (value) => {
+                                    await emit('search-content', value);
+                                }
+                            "
+                        />
                         <!-- 搜索结果 -->
                         <div class="search-num">
                             <span></span>
@@ -43,6 +51,8 @@
     import { useSearchStore } from '@/store/modules/searchStore';
 
     const searchStore = useSearchStore();
+
+    const emit = defineEmits(['search-content']);
 
     // 搜索组件
     // let assortList = ['精准版', '智能版'];

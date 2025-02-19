@@ -16,7 +16,19 @@
             <img src="@/assets/images/logo.png" alt="图标" />
         </div>
         <div class="search-comp">
-            <y9Search :list="assortList" />
+            <y9Search
+                :list="assortList"
+                @search-content="
+                    (value) => {
+                        urlHandleMethod(value, router);
+                        searchStore.$patch({
+                            searchFilterInfo: Object.assign({}, searchStore.$state.searchFilterInfo, {
+                                searchContent: value || null,
+                            }),
+                        });
+                    }
+                "
+            />
         </div>
         <!-- <div class="text">
 			<span></span>
@@ -27,6 +39,13 @@
 
 <script lang="ts" setup>
     import { ref } from 'vue';
+    import { useSearchStore } from '@/store/modules/searchStore';
+    import { urlHandleMethod } from '@/utils/routes';
+    import { useRouter } from 'vue-router';
+    // 实例化路由
+    const router = useRouter();
+    const searchStore = useSearchStore();
+
     // 轮播时间
     const interval = ref(100000);
     // header高度
