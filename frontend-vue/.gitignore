@@ -1,0 +1,6 @@
+y9vue-dataCenter/y9vue-dataCenter
+y9vue-retrievalManager/y9vue-retrievalManager
+
+node_modules/
+auto-imports.d.ts
+.vscode/
